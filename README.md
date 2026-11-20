@@ -21,7 +21,7 @@ Predicting severe sleep debt and next-day fatigue risk from late-night smartphon
 ### Phase 1: Data Exploration & Preprocessing (`01_eda_and_preprocessing.ipynb`)
 - [x] Load `bedtime_screentime_sleep_debt.csv` and verify missing values, duplicates, and data types.
 - [x] Drop `user_id` (non-predictive identifier).
-- [x] Prevent data leakage: drop `next_day_fatigue_score` when predicting `sleep_debt_category` (and run a separate behavioral-only feature comparison).
+- [x] Prevent data leakage: drop `next_day_fatigue_score` and `total_sleep_hours` when predicting `sleep_debt_category` (and run a separate behavioral-only feature comparison).
 - [x] Define binary target (`0` = Optimal/Mild vs. `1` = Moderate/Severe Sleep Debt) and visualize class distribution.
 - [x] One-hot encode categorical features (`gender`, `occupation_type`, `chronotype`, `primary_bedtime_app`).
 - [x] Save a reproducible stratified train/test split (`random_state=42`) so all models are evaluated on identical data.
