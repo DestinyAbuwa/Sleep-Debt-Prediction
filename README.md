@@ -19,12 +19,12 @@ Predicting severe sleep debt and next-day fatigue risk from late-night smartphon
 ## Project Execution Roadmap
 
 ### Phase 1: Data Exploration & Preprocessing (`01_eda_and_preprocessing.ipynb`)
-- [ ] Load `bedtime_screentime_sleep_debt.csv` and verify missing values, duplicates, and data types.
-- [ ] Drop `user_id` (non-predictive identifier).
-- [ ] Prevent data leakage: drop `next_day_fatigue_score` when predicting `sleep_debt_category` (and run a separate behavioral-only feature comparison).
-- [ ] Define binary target (`0` = Optimal/Mild vs. `1` = Moderate/Severe Sleep Debt) and visualize class distribution.
-- [ ] One-hot encode categorical features (`gender`, `occupation_type`, `chronotype`, `primary_bedtime_app`).
-- [ ] Save a reproducible stratified train/test split (`random_state=42`) so all models are evaluated on identical data.
+- [x] Load `bedtime_screentime_sleep_debt.csv` and verify missing values, duplicates, and data types.
+- [x] Drop `user_id` (non-predictive identifier).
+- [x] Prevent data leakage: drop `next_day_fatigue_score` when predicting `sleep_debt_category` (and run a separate behavioral-only feature comparison).
+- [x] Define binary target (`0` = Optimal/Mild vs. `1` = Moderate/Severe Sleep Debt) and visualize class distribution.
+- [x] One-hot encode categorical features (`gender`, `occupation_type`, `chronotype`, `primary_bedtime_app`).
+- [x] Save a reproducible stratified train/test split (`random_state=42`) so all models are evaluated on identical data.
 
 ### Phase 2: Model Training & Hyperparameter Tuning
 *All scaling (`StandardScaler`) and tuning (`GridSearchCV` with 10-fold Stratified CV) must be fit on training folds only to prevent data leakage.*
@@ -33,11 +33,11 @@ Predicting severe sleep debt and next-day fatigue risk from late-night smartphon
   - [ ] Logistic Regression (tune `C`)
   - [ ] Gaussian Naïve Bayes
   - [ ] Decision Tree (tune `max_depth`, `criterion`)
-- [ ] **Ensemble Models (`03_ensemble_models.ipynb`):**
-  - [ ] Random Forest (tune `n_estimators`, `max_depth`)
-  - [ ] Gradient Boosting (tune `learning_rate`, `n_estimators`, `max_depth`)
-- [ ] Record Accuracy, Precision, Recall, F1-Score, ROC-AUC, and runtime (seconds) for every model.
-- [ ] Export high-resolution Confusion Matrices and combined ROC curves to `figures/`.
+- [x] **Ensemble Models (`03_ensemble_models.ipynb`):**
+  - [x] Random Forest (tune `n_estimators`, `max_depth`)
+  - [x] Gradient Boosting (tune `learning_rate`, `n_estimators`, `max_depth`)
+- [x] Record Accuracy, Precision, Recall, F1-Score, ROC-AUC, and runtime (seconds) for every model.
+- [x] Export high-resolution Confusion Matrices and combined ROC curves to `figures/`.
 
 ### Phase 3: Final Report Writing (CS 462 Rubric Order)
 - [ ] **Section 3:** Dataset Description & Preparation (feature dictionary, class counts, preprocessing log)
